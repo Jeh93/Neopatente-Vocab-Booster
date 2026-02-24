@@ -1,0 +1,3950 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-02-24T15:17:14Z",
+  "repo": {
+    "name": "avalla/quiz-patente-ab",
+    "url": "https://github.com/avalla/quiz-patente-ab",
+    "key_data_files_in_repo": [
+      "src/services/questions.json",
+      "src/services/chapters.json",
+      "src/services/hints.json",
+      "public/images/*.gif"
+    ]
+  },
+  "image_naming": {
+    "rule": "image_code is stored as integer in questions.json; the app pads it to 3 digits (e.g., 1 -> 001) and loads /images/<code>.gif from Vite public folder",
+    "example": {
+      "image_code": 97,
+      "file": "public/images/097.gif",
+      "served_path": "/images/097.gif"
+    }
+  },
+  "cards": [
+    {
+      "id": "strada",
+      "term_it": "strada",
+      "term_en": "road",
+      "pos": "noun",
+      "definition_it": "Infrastruttura destinata alla circolazione di pedoni e veicoli.",
+      "definition_en": "Infrastructure intended for the movement of pedestrians and vehicles.",
+      "category": "road_definitions",
+      "tags": [
+        "definizioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "carreggiata",
+      "term_it": "carreggiata",
+      "term_en": "carriageway",
+      "pos": "noun",
+      "definition_it": "Parte della strada destinata alla circolazione dei veicoli.",
+      "definition_en": "Part of the road used by vehicles.",
+      "category": "road_definitions",
+      "tags": [
+        "definizioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "corsia",
+      "term_it": "corsia",
+      "term_en": "lane",
+      "pos": "noun",
+      "definition_it": "Porzione longitudinale della carreggiata, delimitata da segnaletica, per una fila di veicoli.",
+      "definition_en": "Longitudinal portion of the carriageway for a single line of vehicles.",
+      "category": "road_definitions",
+      "tags": [
+        "definizioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "banchina",
+      "term_it": "banchina",
+      "term_en": "shoulder",
+      "pos": "noun",
+      "definition_it": "Parte della strada esterna alla carreggiata, di norma non destinata alla marcia.",
+      "definition_en": "Part of the road outside the carriageway, generally not for driving.",
+      "category": "road_definitions",
+      "tags": [
+        "definizioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "marciapiede",
+      "term_it": "marciapiede",
+      "term_en": "sidewalk",
+      "pos": "noun",
+      "definition_it": "Parte della strada riservata ai pedoni.",
+      "definition_en": "Part of the road reserved for pedestrians.",
+      "category": "road_definitions",
+      "tags": [
+        "pedoni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "spartitraffico",
+      "term_it": "spartitraffico",
+      "term_en": "median / traffic divider",
+      "pos": "noun",
+      "definition_it": "Elemento che separa carreggiate o flussi di traffico opposti.",
+      "definition_en": "Feature that separates carriageways or opposing traffic flows.",
+      "category": "road_definitions",
+      "tags": [
+        "definizioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "intersezione",
+      "term_it": "intersezione",
+      "term_en": "intersection",
+      "pos": "noun",
+      "definition_it": "Punto in cui due o più strade si incontrano o si incrociano.",
+      "definition_en": "Point where two or more roads meet or cross.",
+      "category": "road_definitions",
+      "tags": [
+        "definizioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "incrocio",
+      "term_it": "incrocio",
+      "term_en": "junction / crossing",
+      "pos": "noun",
+      "definition_it": "Intersezione in cui le traiettorie dei veicoli possono confliggere.",
+      "definition_en": "Intersection where vehicle paths may conflict.",
+      "category": "road_definitions",
+      "tags": [
+        "definizioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "rotatoria",
+      "term_it": "rotatoria",
+      "term_en": "roundabout",
+      "pos": "noun",
+      "definition_it": "Intersezione a circolazione rotatoria, con immissioni e uscite.",
+      "definition_en": "Circular intersection with entries and exits.",
+      "category": "road_definitions",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "passaggio-pedonale",
+      "term_it": "passaggio pedonale",
+      "term_en": "pedestrian crossing",
+      "pos": "noun",
+      "definition_it": "Attraversamento riservato ai pedoni, spesso segnalato da strisce.",
+      "definition_en": "Crossing reserved for pedestrians, often marked by stripes.",
+      "category": "road_definitions",
+      "tags": [
+        "pedoni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "pista-ciclabile",
+      "term_it": "pista ciclabile",
+      "term_en": "cycle path",
+      "pos": "noun",
+      "definition_it": "Percorso riservato alla circolazione dei velocipedi.",
+      "definition_en": "Path reserved for bicycles.",
+      "category": "road_definitions",
+      "tags": [
+        "ciclisti"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "area-pedonale",
+      "term_it": "area pedonale",
+      "term_en": "pedestrian area",
+      "pos": "noun",
+      "definition_it": "Zona dove la circolazione dei veicoli è vietata o fortemente limitata.",
+      "definition_en": "Area where vehicles are prohibited or strongly limited.",
+      "category": "road_definitions",
+      "tags": [
+        "pedoni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "zona-a-traffico-limitato-ztl",
+      "term_it": "zona a traffico limitato (ZTL)",
+      "term_en": "limited traffic zone (LTZ)",
+      "pos": "noun",
+      "definition_it": "Area urbana con accesso consentito solo a veicoli autorizzati.",
+      "definition_en": "Urban area where access is allowed only to authorized vehicles.",
+      "category": "road_definitions",
+      "tags": [
+        "urbano"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [
+        "ZTL"
+      ],
+      "aliases_en": [
+        "LTZ"
+      ]
+    },
+    {
+      "id": "centro-abitato",
+      "term_it": "centro abitato",
+      "term_en": "built-up area",
+      "pos": "noun",
+      "definition_it": "Area urbana indicata da apposito segnale, con regole specifiche.",
+      "definition_en": "Area marked by a sign, with specific rules.",
+      "category": "road_definitions",
+      "tags": [
+        "urbano"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "strada-urbana",
+      "term_it": "strada urbana",
+      "term_en": "urban road",
+      "pos": "noun",
+      "definition_it": "Strada interna al centro abitato.",
+      "definition_en": "Road within a built-up area.",
+      "category": "road_definitions",
+      "tags": [
+        "urbano"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "strada-extraurbana",
+      "term_it": "strada extraurbana",
+      "term_en": "extra-urban road",
+      "pos": "noun",
+      "definition_it": "Strada fuori dal centro abitato.",
+      "definition_en": "Road outside a built-up area.",
+      "category": "road_definitions",
+      "tags": [
+        "extraurbano"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "strada-extraurbana-principale",
+      "term_it": "strada extraurbana principale",
+      "term_en": "main extra-urban road",
+      "pos": "noun",
+      "definition_it": "Strada extraurbana con carreggiate separate e caratteristiche da scorrimento veloce.",
+      "definition_en": "Extra-urban road with separated carriageways and fast-flow features.",
+      "category": "road_definitions",
+      "tags": [
+        "extraurbano"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "autostrada",
+      "term_it": "autostrada",
+      "term_en": "motorway",
+      "pos": "noun",
+      "definition_it": "Strada extraurbana a carreggiate indipendenti, accessi controllati.",
+      "definition_en": "Highway with separate carriageways and controlled access.",
+      "category": "road_definitions",
+      "tags": [
+        "extraurbano"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "galleria",
+      "term_it": "galleria",
+      "term_en": "tunnel",
+      "pos": "noun",
+      "definition_it": "Tratto di strada coperto, con regole su luci e distanza di sicurezza.",
+      "definition_en": "Covered road section, with rules on lights and following distance.",
+      "category": "road_definitions",
+      "tags": [
+        "luci",
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "ponte",
+      "term_it": "ponte",
+      "term_en": "bridge",
+      "pos": "noun",
+      "definition_it": "Opera che consente di superare un ostacolo (fiume, strada, ferrovia).",
+      "definition_en": "Structure that allows crossing an obstacle.",
+      "category": "road_definitions",
+      "tags": [],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "dosso",
+      "term_it": "dosso",
+      "term_en": "speed bump / hump",
+      "pos": "noun",
+      "definition_it": "Rilievo sulla carreggiata che impone di rallentare.",
+      "definition_en": "Raised section requiring reduced speed.",
+      "category": "road_definitions",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "curva",
+      "term_it": "curva",
+      "term_en": "curve",
+      "pos": "noun",
+      "definition_it": "Tratto di strada non rettilineo: richiede adeguare velocità e traiettoria.",
+      "definition_en": "Non-straight road section; requires adjusting speed and path.",
+      "category": "road_definitions",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "pendenza",
+      "term_it": "pendenza",
+      "term_en": "slope / gradient",
+      "pos": "noun",
+      "definition_it": "Inclinazione della strada in salita o discesa.",
+      "definition_en": "Road incline uphill or downhill.",
+      "category": "road_definitions",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "passo-carrabile",
+      "term_it": "passo carrabile",
+      "term_en": "driveway access",
+      "pos": "noun",
+      "definition_it": "Accesso carrabile a proprietà privata; spesso segnalato.",
+      "definition_en": "Vehicle access to private property; often signed.",
+      "category": "road_definitions",
+      "tags": [
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "piazzola-di-sosta",
+      "term_it": "piazzola di sosta",
+      "term_en": "lay-by / pull-off",
+      "pos": "noun",
+      "definition_it": "Spazio laterale alla carreggiata per fermarsi in sicurezza.",
+      "definition_en": "Side area off the carriageway to stop safely.",
+      "category": "road_definitions",
+      "tags": [
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/240.gif",
+          "repo_path": "public/images/240.gif"
+        }
+      ],
+      "aliases_it": [
+        "piazzola"
+      ],
+      "aliases_en": [
+        "lay-by"
+      ]
+    },
+    {
+      "id": "intralcio",
+      "term_it": "intralcio",
+      "term_en": "obstruction / hindrance",
+      "pos": "noun",
+      "definition_it": "Situazione che ostacola o rallenta la circolazione.",
+      "definition_en": "Situation that obstructs or slows traffic.",
+      "category": "road_definitions",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnale-stradale",
+      "term_it": "segnale stradale",
+      "term_en": "road sign",
+      "pos": "noun",
+      "definition_it": "Dispositivo che informa, avverte o prescrive un comportamento sulla strada.",
+      "definition_en": "Device that informs, warns, or prescribes behavior on the road.",
+      "category": "signs",
+      "tags": [
+        "segnaletica"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnale-di-pericolo",
+      "term_it": "segnale di pericolo",
+      "term_en": "warning sign",
+      "pos": "noun",
+      "definition_it": "Segnale che avverte di un pericolo e richiede prudenza e adeguamento della velocità.",
+      "definition_en": "Sign that warns of danger and requires caution and speed adjustment.",
+      "category": "signs",
+      "tags": [
+        "pericolo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnale-di-divieto",
+      "term_it": "segnale di divieto",
+      "term_en": "prohibition sign",
+      "pos": "noun",
+      "definition_it": "Segnale che vieta una manovra o una circolazione.",
+      "definition_en": "Sign that forbids an action or circulation.",
+      "category": "signs",
+      "tags": [
+        "divieto"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnale-di-obbligo",
+      "term_it": "segnale di obbligo",
+      "term_en": "mandatory sign",
+      "pos": "noun",
+      "definition_it": "Segnale che impone un comportamento (es. direzione obbligatoria).",
+      "definition_en": "Sign that imposes a behavior (e.g., mandatory direction).",
+      "category": "signs",
+      "tags": [
+        "obbligo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnale-di-precedenza",
+      "term_it": "segnale di precedenza",
+      "term_en": "priority sign",
+      "pos": "noun",
+      "definition_it": "Segnale che regola chi ha diritto di passare per primo.",
+      "definition_en": "Sign that regulates who has the right to go first.",
+      "category": "signs",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnale-di-indicazione",
+      "term_it": "segnale di indicazione",
+      "term_en": "information sign",
+      "pos": "noun",
+      "definition_it": "Segnale che fornisce informazioni utili (direzioni, servizi, ecc.).",
+      "definition_en": "Sign providing useful information (directions, services, etc.).",
+      "category": "signs",
+      "tags": [
+        "indicazione"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "pannello-integrativo",
+      "term_it": "pannello integrativo",
+      "term_en": "supplementary panel",
+      "pos": "noun",
+      "definition_it": "Pannello che completa un segnale indicando distanza, estensione, eccezioni, ecc.",
+      "definition_en": "Panel that complements a sign (distance, extent, exceptions, etc.).",
+      "category": "signs",
+      "tags": [
+        "pannelli"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnale-retroriflettente",
+      "term_it": "segnale retroriflettente",
+      "term_en": "reflective sign",
+      "pos": "adj",
+      "definition_it": "Segnale che riflette la luce dei fari, visibile di notte.",
+      "definition_en": "Sign that reflects headlights, visible at night.",
+      "category": "signs",
+      "tags": [
+        "visibilità"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnale-temporaneo",
+      "term_it": "segnale temporaneo",
+      "term_en": "temporary sign",
+      "pos": "adj",
+      "definition_it": "Segnale usato per cantieri o situazioni provvisorie.",
+      "definition_en": "Sign used for roadworks or temporary situations.",
+      "category": "signs",
+      "tags": [
+        "cantiere"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "animali-selvatici-vaganti",
+      "term_it": "animali selvatici vaganti",
+      "term_en": "wild animals crossing",
+      "pos": "phrase",
+      "definition_it": "Segnale di pericolo: possibile attraversamento improvviso di animali selvatici.",
+      "definition_en": "Warning sign: possible sudden crossing of wild animals.",
+      "category": "signs",
+      "tags": [
+        "pericolo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/027.gif",
+          "repo_path": "public/images/027.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "direzione-obbligatoria-a-sinistra",
+      "term_it": "direzione obbligatoria a sinistra",
+      "term_en": "mandatory left turn",
+      "pos": "phrase",
+      "definition_it": "Segnale di obbligo: al prossimo incrocio si può andare solo a sinistra.",
+      "definition_en": "Mandatory sign: at the next junction you can only turn left.",
+      "category": "signs",
+      "tags": [
+        "obbligo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/094.gif",
+          "repo_path": "public/images/094.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "preavviso-direzione-obbligatoria-a-sinistra",
+      "term_it": "preavviso direzione obbligatoria a sinistra",
+      "term_en": "advance warning: mandatory left",
+      "pos": "phrase",
+      "definition_it": "Segnale che preannuncia l'obbligo di svoltare a sinistra al prossimo incrocio.",
+      "definition_en": "Sign that warns you must turn left at the next junction.",
+      "category": "signs",
+      "tags": [
+        "obbligo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/097.gif",
+          "repo_path": "public/images/097.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "senso-unico-frontale",
+      "term_it": "senso unico frontale",
+      "term_en": "one-way road begins",
+      "pos": "phrase",
+      "definition_it": "Segnale di indicazione: inizia una strada a senso unico.",
+      "definition_en": "Information sign: start of a one-way road.",
+      "category": "signs",
+      "tags": [
+        "indicazione"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/153.gif",
+          "repo_path": "public/images/153.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "velocita-consigliata",
+      "term_it": "velocità consigliata",
+      "term_en": "advisory speed",
+      "pos": "phrase",
+      "definition_it": "Segnale che consiglia di non superare una certa velocità (non è un obbligo).",
+      "definition_en": "Sign recommending not to exceed a given speed (not mandatory).",
+      "category": "signs",
+      "tags": [
+        "indicazione",
+        "velocità"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/226.gif",
+          "repo_path": "public/images/226.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "posto-di-blocco",
+      "term_it": "posto di blocco",
+      "term_en": "police checkpoint",
+      "pos": "noun",
+      "definition_it": "Segnale che preavvisa un controllo da parte delle forze dell’ordine.",
+      "definition_en": "Sign warning of a police checkpoint.",
+      "category": "signs",
+      "tags": [
+        "indicazione"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/163.gif",
+          "repo_path": "public/images/163.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "pannello-arancione-adr",
+      "term_it": "pannello arancione ADR",
+      "term_en": "ADR orange plate",
+      "pos": "noun",
+      "definition_it": "Pannello arancione sui veicoli che trasportano merci pericolose (ADR).",
+      "definition_en": "Orange plate on vehicles carrying dangerous goods (ADR).",
+      "category": "signs",
+      "tags": [
+        "sicurezza",
+        "merci-pericolose"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/303.gif",
+          "repo_path": "public/images/303.gif"
+        }
+      ],
+      "aliases_it": [
+        "pannello arancione retroriflettente"
+      ],
+      "aliases_en": [
+        "ADR plate"
+      ]
+    },
+    {
+      "id": "limite-massimo-di-velocita",
+      "term_it": "limite massimo di velocità",
+      "term_en": "speed limit",
+      "pos": "noun",
+      "definition_it": "Valore massimo di velocità consentita, indicato da apposito segnale.",
+      "definition_en": "Maximum permitted speed, shown by a sign.",
+      "category": "signs",
+      "tags": [
+        "velocità"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "fine-prescrizione",
+      "term_it": "fine prescrizione",
+      "term_en": "end of restriction",
+      "pos": "noun",
+      "definition_it": "Segnale che indica la fine di un divieto o obbligo precedentemente imposto.",
+      "definition_en": "Sign indicating the end of a previously imposed restriction.",
+      "category": "signs",
+      "tags": [
+        "divieto",
+        "obbligo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "divieto-di-sosta",
+      "term_it": "divieto di sosta",
+      "term_en": "no parking",
+      "pos": "phrase",
+      "definition_it": "Segnale che vieta la sosta (fermata prolungata con conducente assente).",
+      "definition_en": "Sign that forbids parking (prolonged stop with driver away).",
+      "category": "signs",
+      "tags": [
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "divieto-di-fermata",
+      "term_it": "divieto di fermata",
+      "term_en": "no stopping",
+      "pos": "phrase",
+      "definition_it": "Segnale che vieta anche la fermata (stop breve).",
+      "definition_en": "Sign that forbids even brief stopping.",
+      "category": "signs",
+      "tags": [
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnaletica-orizzontale",
+      "term_it": "segnaletica orizzontale",
+      "term_en": "road markings",
+      "pos": "noun",
+      "definition_it": "Linee e scritte sulla carreggiata che guidano e regolano la circolazione.",
+      "definition_en": "Lines and symbols on the road that guide and regulate traffic.",
+      "category": "road_markings",
+      "tags": [
+        "segnaletica"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "striscia-continua",
+      "term_it": "striscia continua",
+      "term_en": "solid line",
+      "pos": "noun",
+      "definition_it": "Linea che non può essere superata o valicata (salvo casi specifici).",
+      "definition_en": "Line that must not be crossed (except in specific cases).",
+      "category": "road_markings",
+      "tags": [
+        "corsie"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "striscia-discontinua",
+      "term_it": "striscia discontinua",
+      "term_en": "broken line",
+      "pos": "noun",
+      "definition_it": "Linea che può essere superata se la manovra è consentita e sicura.",
+      "definition_en": "Line that may be crossed if the maneuver is allowed and safe.",
+      "category": "road_markings",
+      "tags": [
+        "corsie"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "linea-di-arresto",
+      "term_it": "linea di arresto",
+      "term_en": "stop line",
+      "pos": "noun",
+      "definition_it": "Linea trasversale dove fermarsi in presenza di STOP o semaforo.",
+      "definition_en": "Transverse line where you must stop at STOP or a traffic light.",
+      "category": "road_markings",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "attraversamento-pedonale-strisce",
+      "term_it": "attraversamento pedonale (strisce)",
+      "term_en": "zebra crossing",
+      "pos": "noun",
+      "definition_it": "Strisce bianche trasversali che indicano il passaggio pedonale.",
+      "definition_en": "White transverse stripes marking a pedestrian crossing.",
+      "category": "road_markings",
+      "tags": [
+        "pedoni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "corsia-di-emergenza",
+      "term_it": "corsia di emergenza",
+      "term_en": "emergency lane",
+      "pos": "noun",
+      "definition_it": "Corsia riservata alle emergenze (soprattutto in autostrada).",
+      "definition_en": "Lane reserved for emergencies (especially on motorways).",
+      "category": "road_markings",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "striscia-bianca-laterale-discontinua",
+      "term_it": "striscia bianca laterale discontinua",
+      "term_en": "broken edge line",
+      "pos": "phrase",
+      "definition_it": "Linea laterale che delimita la carreggiata; può separare accessi e margini.",
+      "definition_en": "Edge line that marks the carriageway; can separate accesses and edges.",
+      "category": "road_markings",
+      "tags": [
+        "corsie"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/505.gif",
+          "repo_path": "public/images/505.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "scritta-bus",
+      "term_it": "scritta BUS",
+      "term_en": "BUS marking",
+      "pos": "noun",
+      "definition_it": "Scritte a terra che riservano uno spazio/corsia ai bus.",
+      "definition_en": "Road text indicating an area/lane reserved for buses.",
+      "category": "road_markings",
+      "tags": [
+        "trasporto-pubblico"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "disco-orario",
+      "term_it": "disco orario",
+      "term_en": "parking disc",
+      "pos": "noun",
+      "definition_it": "Dispositivo per indicare l'ora di inizio sosta dove richiesto.",
+      "definition_en": "Device showing parking start time where required.",
+      "category": "road_markings",
+      "tags": [
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "semaforo",
+      "term_it": "semaforo",
+      "term_en": "traffic light",
+      "pos": "noun",
+      "definition_it": "Segnalazione luminosa che regola i flussi di traffico.",
+      "definition_en": "Light signal that regulates traffic flows.",
+      "category": "signals",
+      "tags": [
+        "semafori"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "luce-rossa",
+      "term_it": "luce rossa",
+      "term_en": "red light",
+      "pos": "noun",
+      "definition_it": "Impone l'arresto prima della linea di arresto.",
+      "definition_en": "Requires stopping before the stop line.",
+      "category": "signals",
+      "tags": [
+        "semafori"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "luce-gialla",
+      "term_it": "luce gialla",
+      "term_en": "amber/yellow light",
+      "pos": "noun",
+      "definition_it": "Preannuncia il rosso: ci si ferma se possibile in sicurezza.",
+      "definition_en": "Warns of red: stop if it is safe to do so.",
+      "category": "signals",
+      "tags": [
+        "semafori"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "luce-verde",
+      "term_it": "luce verde",
+      "term_en": "green light",
+      "pos": "noun",
+      "definition_it": "Consente il passaggio, salvo ostacoli e con prudenza.",
+      "definition_en": "Allows proceeding, with caution and if clear.",
+      "category": "signals",
+      "tags": [
+        "semafori"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "giallo-lampeggiante",
+      "term_it": "giallo lampeggiante",
+      "term_en": "flashing amber",
+      "pos": "phrase",
+      "definition_it": "Indica cautela: si passa con prudenza, dando precedenza se necessario.",
+      "definition_en": "Indicates caution: proceed carefully, yielding if needed.",
+      "category": "signals",
+      "tags": [
+        "semafori"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/160.gif",
+          "repo_path": "public/images/160.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "luci-rosse-lampeggianti-passaggio-a-livello",
+      "term_it": "luci rosse lampeggianti (passaggio a livello)",
+      "term_en": "flashing red lights (level crossing)",
+      "pos": "phrase",
+      "definition_it": "Segnale di arresto al passaggio a livello: è vietato attraversare.",
+      "definition_en": "Stop signal at a level crossing: crossing is forbidden.",
+      "category": "signals",
+      "tags": [
+        "ferrovia"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "passaggio-a-livello",
+      "term_it": "passaggio a livello",
+      "term_en": "level crossing",
+      "pos": "noun",
+      "definition_it": "Attraversamento tra strada e ferrovia (con o senza barriere).",
+      "definition_en": "Crossing between road and railway (with or without barriers).",
+      "category": "signals",
+      "tags": [
+        "ferrovia"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "semibarriera",
+      "term_it": "semibarriera",
+      "term_en": "half-barrier",
+      "pos": "noun",
+      "definition_it": "Barriera che chiude parzialmente la carreggiata al passaggio a livello.",
+      "definition_en": "Barrier that partially closes the road at a level crossing.",
+      "category": "signals",
+      "tags": [
+        "ferrovia"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "semaforo-per-biciclette",
+      "term_it": "semaforo per biciclette",
+      "term_en": "bicycle traffic light",
+      "pos": "noun",
+      "definition_it": "Semaforo dedicato ai ciclisti, con simbolo della bici.",
+      "definition_en": "Traffic light dedicated to cyclists, with a bicycle symbol.",
+      "category": "signals",
+      "tags": [
+        "ciclisti"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/158.gif",
+          "repo_path": "public/images/158.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "precedenza",
+      "term_it": "precedenza",
+      "term_en": "right of way",
+      "pos": "noun",
+      "definition_it": "Diritto di passare prima in un incrocio o in una manovra.",
+      "definition_en": "The right to go first at a junction or during a maneuver.",
+      "category": "right_of_way",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "dare-precedenza",
+      "term_it": "dare precedenza",
+      "term_en": "to yield",
+      "pos": "verb",
+      "definition_it": "Lasciare passare gli altri veicoli che hanno diritto o priorità.",
+      "definition_en": "To let other vehicles go first when they have priority.",
+      "category": "right_of_way",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "Devi dare precedenza ai veicoli sulla strada principale.",
+      "example_en": "You must yield to vehicles on the main road.",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "diritto-di-precedenza",
+      "term_it": "diritto di precedenza",
+      "term_en": "priority road",
+      "pos": "noun",
+      "definition_it": "Condizione/indicazione per cui un veicolo o una strada ha priorità sugli altri.",
+      "definition_en": "Condition/indication that a road or vehicle has priority over others.",
+      "category": "right_of_way",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "incrocio-con-precedenza",
+      "term_it": "incrocio con precedenza",
+      "term_en": "priority at junction",
+      "pos": "phrase",
+      "definition_it": "Regole che stabiliscono l'ordine di passaggio in un incrocio.",
+      "definition_en": "Rules that determine crossing order at a junction.",
+      "category": "right_of_way",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "rotatoria-precedenza",
+      "term_it": "rotatoria: precedenza",
+      "term_en": "roundabout priority",
+      "pos": "phrase",
+      "definition_it": "In genere si dà precedenza a chi è già in rotatoria (salvo diversa segnalazione).",
+      "definition_en": "Generally, yield to traffic already in the roundabout (unless signs indicate otherwise).",
+      "category": "right_of_way",
+      "tags": [
+        "precedenza",
+        "rotatoria"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "ordine-di-precedenza",
+      "term_it": "ordine di precedenza",
+      "term_en": "order of priority",
+      "pos": "noun",
+      "definition_it": "Sequenza con cui i veicoli devono transitare in un incrocio.",
+      "definition_en": "Sequence in which vehicles should pass through an intersection.",
+      "category": "right_of_way",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/647.gif",
+          "repo_path": "public/images/647.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "incrocio-esempi-di-precedenza",
+      "term_it": "incrocio: esempi di precedenza",
+      "term_en": "priority examples at intersections",
+      "pos": "phrase",
+      "definition_it": "Situazioni grafiche per capire chi passa prima.",
+      "definition_en": "Diagram examples to determine who goes first.",
+      "category": "right_of_way",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/662.gif",
+          "repo_path": "public/images/662.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "arresto",
+      "term_it": "arresto",
+      "term_en": "stop (mandatory)",
+      "pos": "noun",
+      "definition_it": "Interruzione della marcia imposta da segnale o necessità (es. semaforo rosso).",
+      "definition_en": "Stopping forced by a sign or necessity (e.g., red light).",
+      "category": "stopping_parking",
+      "tags": [
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "fermata",
+      "term_it": "fermata",
+      "term_en": "stop (short)",
+      "pos": "noun",
+      "definition_it": "Sospensione della marcia breve, con conducente presente e pronto a ripartire.",
+      "definition_en": "Brief stop with the driver present and ready to move.",
+      "category": "stopping_parking",
+      "tags": [
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "sosta",
+      "term_it": "sosta",
+      "term_en": "parking",
+      "pos": "noun",
+      "definition_it": "Sospensione della marcia protratta, con possibilità di allontanarsi dal veicolo.",
+      "definition_en": "Prolonged stop with the possibility of leaving the vehicle.",
+      "category": "stopping_parking",
+      "tags": [
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "sosta-di-emergenza",
+      "term_it": "sosta di emergenza",
+      "term_en": "emergency stop",
+      "pos": "noun",
+      "definition_it": "Interruzione della marcia per avaria o pericolo; si mette il veicolo in sicurezza.",
+      "definition_en": "Stop due to breakdown or danger; make the vehicle safe.",
+      "category": "stopping_parking",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "parcheggiare",
+      "term_it": "parcheggiare",
+      "term_en": "to park",
+      "pos": "verb",
+      "definition_it": "Mettere il veicolo in sosta in un luogo consentito.",
+      "definition_en": "To leave the vehicle parked in a permitted place.",
+      "category": "stopping_parking",
+      "tags": [
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "ripartire",
+      "term_it": "ripartire",
+      "term_en": "to set off again",
+      "pos": "verb",
+      "definition_it": "Riprendere la marcia dopo una fermata o sosta, controllando che sia sicuro.",
+      "definition_en": "To start moving again after stopping, ensuring it is safe.",
+      "category": "stopping_parking",
+      "tags": [
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "svoltare",
+      "term_it": "svoltare",
+      "term_en": "to turn",
+      "pos": "verb",
+      "definition_it": "Cambiare direzione a un incrocio o in una manovra.",
+      "definition_en": "To change direction at a junction or during a maneuver.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi"
+      ],
+      "difficulty": "core",
+      "example_it": "Devi svoltare a sinistra al prossimo incrocio.",
+      "example_en": "You must turn left at the next junction.",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "proseguire",
+      "term_it": "proseguire",
+      "term_en": "to continue",
+      "pos": "verb",
+      "definition_it": "Continuare la marcia nella stessa direzione.",
+      "definition_en": "To continue driving in the same direction.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "rallentare",
+      "term_it": "rallentare",
+      "term_en": "to slow down",
+      "pos": "verb",
+      "definition_it": "Diminuire la velocità in modo graduale.",
+      "definition_en": "To reduce speed gradually.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi",
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "accelerare",
+      "term_it": "accelerare",
+      "term_en": "to accelerate",
+      "pos": "verb",
+      "definition_it": "Aumentare la velocità.",
+      "definition_en": "To increase speed.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "frenare",
+      "term_it": "frenare",
+      "term_en": "to brake",
+      "pos": "verb",
+      "definition_it": "Ridurre la velocità usando i freni e/o il freno motore.",
+      "definition_en": "To reduce speed using brakes and/or engine braking.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi",
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "arrestarsi",
+      "term_it": "arrestarsi",
+      "term_en": "to come to a stop",
+      "pos": "verb",
+      "definition_it": "Fermare completamente il veicolo.",
+      "definition_en": "To stop the vehicle completely.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "sorpassare",
+      "term_it": "sorpassare",
+      "term_en": "to overtake",
+      "pos": "verb",
+      "definition_it": "Superare un veicolo procedendo nella corsia accanto, rispettando divieti e sicurezza.",
+      "definition_en": "To pass another vehicle using an adjacent lane, respecting rules and safety.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi",
+        "sorpasso"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "superare",
+      "term_it": "superare",
+      "term_en": "to pass (go beyond)",
+      "pos": "verb",
+      "definition_it": "Oltrepassare un veicolo o un segnale, in senso generale.",
+      "definition_en": "To go beyond a vehicle or a sign, generally.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "immettersi",
+      "term_it": "immettersi",
+      "term_en": "to merge",
+      "pos": "verb",
+      "definition_it": "Entrare in una strada o in un flusso di traffico.",
+      "definition_en": "To enter a road or traffic stream.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "invertire-la-marcia",
+      "term_it": "invertire la marcia",
+      "term_en": "to make a U-turn",
+      "pos": "phrase",
+      "definition_it": "Cambiare senso di marcia tornando indietro, dove consentito.",
+      "definition_en": "To reverse direction (U-turn) where allowed.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "retromarcia",
+      "term_it": "retromarcia",
+      "term_en": "reverse gear",
+      "pos": "noun",
+      "definition_it": "Marcia all'indietro del veicolo.",
+      "definition_en": "Backward movement of the vehicle.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "indicare",
+      "term_it": "indicare",
+      "term_en": "to signal/indicate",
+      "pos": "verb",
+      "definition_it": "Segnalare le manovre agli altri utenti (frecce, braccio, ecc.).",
+      "definition_en": "To signal maneuvers to other road users.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi",
+        "segnalazioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "lampeggiare",
+      "term_it": "lampeggiare",
+      "term_en": "to flash",
+      "pos": "verb",
+      "definition_it": "Emettere luce intermittente (frecce, lampeggianti, ecc.).",
+      "definition_en": "To emit intermittent light (indicators, flashers, etc.).",
+      "category": "maneuvers",
+      "tags": [
+        "verbi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "incolonnamento",
+      "term_it": "incolonnamento",
+      "term_en": "queue / tailback",
+      "pos": "noun",
+      "definition_it": "Colonna di veicoli che procedono lentamente o sono fermi.",
+      "definition_en": "Line of vehicles moving slowly or stopped.",
+      "category": "maneuvers",
+      "tags": [
+        "traffico"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "sbandare",
+      "term_it": "sbandare",
+      "term_en": "to skid/swerve",
+      "pos": "verb",
+      "definition_it": "Perdere stabilità e deviare improvvisamente dalla traiettoria.",
+      "definition_en": "To lose stability and deviate suddenly from the path.",
+      "category": "maneuvers",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "derapare",
+      "term_it": "derapare",
+      "term_en": "to drift/skid",
+      "pos": "verb",
+      "definition_it": "Scivolare lateralmente per perdita di aderenza.",
+      "definition_en": "To slide sideways due to loss of grip.",
+      "category": "maneuvers",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "tombino",
+      "term_it": "tombino",
+      "term_en": "manhole cover",
+      "pos": "noun",
+      "definition_it": "Chiusino metallico sulla carreggiata; può essere scivoloso da bagnato.",
+      "definition_en": "Metal cover on the road; can be slippery when wet.",
+      "category": "maneuvers",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "rotaie-del-tram",
+      "term_it": "rotaie del tram",
+      "term_en": "tram tracks",
+      "pos": "noun",
+      "definition_it": "Binari del tram sulla strada; pericolosi per due ruote se bagnati.",
+      "definition_en": "Tram rails on the road; dangerous for two-wheelers when wet.",
+      "category": "maneuvers",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "velocita",
+      "term_it": "velocità",
+      "term_en": "speed",
+      "pos": "noun",
+      "definition_it": "Rapporto tra spazio percorso e tempo; va adattata a condizioni e limiti.",
+      "definition_en": "Distance covered per unit time; must be adapted to conditions and limits.",
+      "category": "speed_distance",
+      "tags": [
+        "velocità"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "moderare-la-velocita",
+      "term_it": "moderare la velocità",
+      "term_en": "to reduce speed",
+      "pos": "phrase",
+      "definition_it": "Ridurre la velocità per sicurezza, soprattutto vicino a pericoli o incroci.",
+      "definition_en": "Reduce speed for safety, especially near hazards or junctions.",
+      "category": "speed_distance",
+      "tags": [
+        "velocità"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "distanza-di-sicurezza",
+      "term_it": "distanza di sicurezza",
+      "term_en": "safe following distance",
+      "pos": "noun",
+      "definition_it": "Spazio da mantenere dal veicolo che precede per fermarsi senza urtare.",
+      "definition_en": "Distance to keep behind the vehicle ahead to stop without collision.",
+      "category": "speed_distance",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "spazio-di-frenatura",
+      "term_it": "spazio di frenatura",
+      "term_en": "braking distance",
+      "pos": "noun",
+      "definition_it": "Spazio percorso dal veicolo dal momento della frenata fino all'arresto.",
+      "definition_en": "Distance traveled from braking to a complete stop.",
+      "category": "speed_distance",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "tempo-di-reazione",
+      "term_it": "tempo di reazione",
+      "term_en": "reaction time",
+      "pos": "noun",
+      "definition_it": "Tempo tra percezione del pericolo e azione (frenata, sterzata, ecc.).",
+      "definition_en": "Time between perceiving danger and acting (braking, steering, etc.).",
+      "category": "speed_distance",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "aderenza",
+      "term_it": "aderenza",
+      "term_en": "grip / traction",
+      "pos": "noun",
+      "definition_it": "Capacità del pneumatico di 'attaccarsi' al fondo stradale.",
+      "definition_en": "Tyre's ability to grip the road surface.",
+      "category": "speed_distance",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "freni",
+      "term_it": "freni",
+      "term_en": "brakes",
+      "pos": "noun",
+      "definition_it": "Sistema che rallenta o arresta il veicolo trasformando energia in calore.",
+      "definition_en": "System that slows/stops the vehicle by converting energy into heat.",
+      "category": "vehicle_safety",
+      "tags": [
+        "veicolo",
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "servofreno",
+      "term_it": "servofreno",
+      "term_en": "brake booster",
+      "pos": "noun",
+      "definition_it": "Dispositivo che aiuta la frenata (es. servofreno a depressione).",
+      "definition_en": "Device that assists braking (e.g., vacuum brake booster).",
+      "category": "vehicle_safety",
+      "tags": [
+        "freni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "freno-di-stazionamento",
+      "term_it": "freno di stazionamento",
+      "term_en": "parking brake",
+      "pos": "noun",
+      "definition_it": "Freno usato per bloccare il veicolo in sosta o in emergenza.",
+      "definition_en": "Brake used to hold the vehicle when parked or in emergencies.",
+      "category": "vehicle_safety",
+      "tags": [
+        "freni",
+        "sosta"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "pneumatico",
+      "term_it": "pneumatico",
+      "term_en": "tyre",
+      "pos": "noun",
+      "definition_it": "Elemento a contatto con la strada; influisce su aderenza e frenata.",
+      "definition_en": "Road-contact component; affects grip and braking.",
+      "category": "vehicle_safety",
+      "tags": [
+        "veicolo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "pressione-di-gonfiaggio",
+      "term_it": "pressione di gonfiaggio",
+      "term_en": "tyre pressure",
+      "pos": "noun",
+      "definition_it": "Pressione dell'aria nel pneumatico; se errata riduce sicurezza e aumenta consumi.",
+      "definition_en": "Air pressure in the tyre; wrong pressure reduces safety and increases consumption.",
+      "category": "vehicle_safety",
+      "tags": [
+        "veicolo",
+        "eco"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "specchietti-retrovisori",
+      "term_it": "specchietti retrovisori",
+      "term_en": "rear-view mirrors",
+      "pos": "noun",
+      "definition_it": "Specchi per controllare ciò che succede dietro e di lato al veicolo.",
+      "definition_en": "Mirrors to check behind and beside the vehicle.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "cinture-di-sicurezza",
+      "term_it": "cinture di sicurezza",
+      "term_en": "seat belts",
+      "pos": "noun",
+      "definition_it": "Dispositivo di ritenuta che riduce lesioni in caso di incidente.",
+      "definition_en": "Restraint device reducing injury in crashes.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "airbag",
+      "term_it": "airbag",
+      "term_en": "airbag",
+      "pos": "noun",
+      "definition_it": "Dispositivo che si gonfia in urto per proteggere gli occupanti.",
+      "definition_en": "Device that inflates in a crash to protect occupants.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "casco",
+      "term_it": "casco",
+      "term_en": "helmet",
+      "pos": "noun",
+      "definition_it": "Protezione obbligatoria per motociclisti e ciclomotoristi.",
+      "definition_en": "Mandatory protection for motorcyclists and moped riders.",
+      "category": "vehicle_safety",
+      "tags": [
+        "due-ruote"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "luci-anabbaglianti",
+      "term_it": "luci anabbaglianti",
+      "term_en": "dipped headlights",
+      "pos": "noun",
+      "definition_it": "Fari per illuminare senza abbagliare; spesso obbligatori per moto anche di giorno.",
+      "definition_en": "Headlights that illuminate without dazzling; often required for motorcycles even in daytime.",
+      "category": "vehicle_safety",
+      "tags": [
+        "luci"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "luci-abbaglianti",
+      "term_it": "luci abbaglianti",
+      "term_en": "high beams",
+      "pos": "noun",
+      "definition_it": "Fari a luce intensa; si usano quando non si abbaglia chi arriva.",
+      "definition_en": "Bright headlights; use when you don't dazzle others.",
+      "category": "vehicle_safety",
+      "tags": [
+        "luci"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "indicatori-di-direzione",
+      "term_it": "indicatori di direzione",
+      "term_en": "turn signals",
+      "pos": "noun",
+      "definition_it": "Frecce luminose per segnalare svolte e cambi corsia.",
+      "definition_en": "Blinkers used to signal turns and lane changes.",
+      "category": "vehicle_safety",
+      "tags": [
+        "luci",
+        "segnalazioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "spia",
+      "term_it": "spia",
+      "term_en": "warning light",
+      "pos": "noun",
+      "definition_it": "Luce sul cruscotto che segnala uno stato o un guasto.",
+      "definition_en": "Dashboard light indicating a state or fault.",
+      "category": "vehicle_safety",
+      "tags": [
+        "veicolo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/721.gif",
+          "repo_path": "public/images/721.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "patente-di-guida",
+      "term_it": "patente di guida",
+      "term_en": "driving licence",
+      "pos": "noun",
+      "definition_it": "Documento che abilita alla guida di determinati veicoli.",
+      "definition_en": "Document authorizing driving certain vehicles.",
+      "category": "rules_documents",
+      "tags": [
+        "documenti"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "revisione",
+      "term_it": "revisione",
+      "term_en": "vehicle inspection",
+      "pos": "noun",
+      "definition_it": "Controllo periodico obbligatorio dello stato del veicolo.",
+      "definition_en": "Mandatory periodic inspection of vehicle condition.",
+      "category": "rules_documents",
+      "tags": [
+        "veicolo",
+        "obblighi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "assicurazione-rca",
+      "term_it": "assicurazione RCA",
+      "term_en": "third-party liability insurance",
+      "pos": "noun",
+      "definition_it": "Assicurazione obbligatoria che copre i danni causati a terzi.",
+      "definition_en": "Mandatory insurance covering damage caused to third parties.",
+      "category": "rules_documents",
+      "tags": [
+        "assicurazione"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "massimale",
+      "term_it": "massimale",
+      "term_en": "policy limit",
+      "pos": "noun",
+      "definition_it": "Importo massimo che l'assicurazione paga per un sinistro.",
+      "definition_en": "Maximum amount an insurance policy will pay for a claim.",
+      "category": "rules_documents",
+      "tags": [
+        "assicurazione"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "organi-di-polizia",
+      "term_it": "organi di polizia",
+      "term_en": "police authorities",
+      "pos": "noun",
+      "definition_it": "Forze dell'ordine che controllano il rispetto delle regole stradali.",
+      "definition_en": "Law enforcement bodies that check road rule compliance.",
+      "category": "rules_documents",
+      "tags": [
+        "controlli"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "sanzione",
+      "term_it": "sanzione",
+      "term_en": "penalty",
+      "pos": "noun",
+      "definition_it": "Conseguenza prevista (multa, punti, ecc.) per una violazione.",
+      "definition_en": "Consequence (fine, points, etc.) for an offence.",
+      "category": "rules_documents",
+      "tags": [
+        "sanzioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "multa",
+      "term_it": "multa",
+      "term_en": "fine",
+      "pos": "noun",
+      "definition_it": "Somma di denaro da pagare per una violazione.",
+      "definition_en": "Money to be paid as a penalty for a violation.",
+      "category": "rules_documents",
+      "tags": [
+        "sanzioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "arresto-penale",
+      "term_it": "arresto (penale)",
+      "term_en": "arrest (criminal)",
+      "pos": "noun",
+      "definition_it": "Misura penale prevista per alcune gravi violazioni (es. guida in stato di ebbrezza).",
+      "definition_en": "Criminal measure for some serious offences (e.g., DUI).",
+      "category": "rules_documents",
+      "tags": [
+        "sanzioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "incidente-stradale",
+      "term_it": "incidente stradale",
+      "term_en": "road accident",
+      "pos": "noun",
+      "definition_it": "Evento che provoca danni a persone o cose durante la circolazione.",
+      "definition_en": "Event causing damage to people or property during traffic.",
+      "category": "accidents_firstaid",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "ferito",
+      "term_it": "ferito",
+      "term_en": "injured person",
+      "pos": "noun",
+      "definition_it": "Persona che ha subito lesioni in un incidente.",
+      "definition_en": "Person who has suffered injuries in an accident.",
+      "category": "accidents_firstaid",
+      "tags": [
+        "soccorso"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "soccorrere",
+      "term_it": "soccorrere",
+      "term_en": "to give assistance",
+      "pos": "verb",
+      "definition_it": "Prestare aiuto a chi è in difficoltà, chiamando anche i soccorsi.",
+      "definition_en": "To help someone in difficulty, including calling emergency services.",
+      "category": "accidents_firstaid",
+      "tags": [
+        "soccorso"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnalare-un-incidente",
+      "term_it": "segnalare un incidente",
+      "term_en": "to signal an accident",
+      "pos": "phrase",
+      "definition_it": "Rendere visibile il pericolo (triangolo, luci, ecc.) per evitare altri incidenti.",
+      "definition_en": "Make the hazard visible (warning triangle, lights, etc.) to prevent further crashes.",
+      "category": "accidents_firstaid",
+      "tags": [
+        "soccorso"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "triangolo-di-emergenza",
+      "term_it": "triangolo di emergenza",
+      "term_en": "warning triangle",
+      "pos": "noun",
+      "definition_it": "Dispositivo riflettente da posizionare per segnalare un veicolo fermo in emergenza.",
+      "definition_en": "Reflective device placed to warn of a stopped vehicle in emergency.",
+      "category": "accidents_firstaid",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "limitazione-dei-consumi",
+      "term_it": "limitazione dei consumi",
+      "term_en": "reducing consumption",
+      "pos": "phrase",
+      "definition_it": "Stile di guida che riduce carburante e usura (velocità regolare, marce alte).",
+      "definition_en": "Driving style that reduces fuel and wear (steady speed, higher gears).",
+      "category": "eco_driving",
+      "tags": [
+        "eco"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "inquinamento",
+      "term_it": "inquinamento",
+      "term_en": "pollution",
+      "pos": "noun",
+      "definition_it": "Emissioni nocive prodotte anche dai veicoli; si riduce con manutenzione e guida corretta.",
+      "definition_en": "Harmful emissions also produced by vehicles; reduced with maintenance and proper driving.",
+      "category": "eco_driving",
+      "tags": [
+        "eco"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "pedone",
+      "term_it": "pedone",
+      "term_en": "pedestrian",
+      "pos": "noun",
+      "definition_it": "Persona che si sposta a piedi sulla strada.",
+      "definition_en": "Person moving on foot.",
+      "category": "road_users",
+      "tags": [
+        "utenti"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "ciclista",
+      "term_it": "ciclista",
+      "term_en": "cyclist",
+      "pos": "noun",
+      "definition_it": "Conducente di bicicletta.",
+      "definition_en": "Bicycle rider.",
+      "category": "road_users",
+      "tags": [
+        "utenti"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "velocipede",
+      "term_it": "velocipede",
+      "term_en": "bicycle",
+      "pos": "noun",
+      "definition_it": "Veicolo a due ruote (o più) azionato dalla forza muscolare.",
+      "definition_en": "Vehicle powered by muscular force (e.g., bicycle).",
+      "category": "road_users",
+      "tags": [
+        "utenti"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "ciclomotore",
+      "term_it": "ciclomotore",
+      "term_en": "moped",
+      "pos": "noun",
+      "definition_it": "Veicolo a motore di piccola cilindrata/potenza, con limiti specifici.",
+      "definition_en": "Small motor vehicle (moped) with specific limits.",
+      "category": "road_users",
+      "tags": [
+        "veicoli"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "motociclo",
+      "term_it": "motociclo",
+      "term_en": "motorcycle",
+      "pos": "noun",
+      "definition_it": "Veicolo a due ruote a motore con cilindrata/potenza superiore al ciclomotore.",
+      "definition_en": "Two-wheeled motor vehicle larger than a moped.",
+      "category": "road_users",
+      "tags": [
+        "veicoli"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "autovettura",
+      "term_it": "autovettura",
+      "term_en": "car",
+      "pos": "noun",
+      "definition_it": "Veicolo a motore per il trasporto di persone (di norma fino a 9).",
+      "definition_en": "Motor vehicle for transporting people (usually up to 9).",
+      "category": "road_users",
+      "tags": [
+        "veicoli"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "autocarro",
+      "term_it": "autocarro",
+      "term_en": "truck",
+      "pos": "noun",
+      "definition_it": "Veicolo destinato al trasporto di cose.",
+      "definition_en": "Vehicle intended for transporting goods.",
+      "category": "road_users",
+      "tags": [
+        "veicoli"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "autobus",
+      "term_it": "autobus",
+      "term_en": "bus",
+      "pos": "noun",
+      "definition_it": "Veicolo destinato al trasporto collettivo di persone.",
+      "definition_en": "Vehicle for collective passenger transport.",
+      "category": "road_users",
+      "tags": [
+        "veicoli",
+        "trasporto-pubblico"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "rimorchio",
+      "term_it": "rimorchio",
+      "term_en": "trailer",
+      "pos": "noun",
+      "definition_it": "Veicolo senza motore trainato da un altro veicolo (motrice).",
+      "definition_en": "Unpowered vehicle towed by another (tractor vehicle).",
+      "category": "road_users",
+      "tags": [
+        "veicoli"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "motrice",
+      "term_it": "motrice",
+      "term_en": "tractor vehicle",
+      "pos": "noun",
+      "definition_it": "Veicolo che traina un rimorchio.",
+      "definition_en": "Vehicle that tows a trailer.",
+      "category": "road_users",
+      "tags": [
+        "veicoli"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "filobus",
+      "term_it": "filobus",
+      "term_en": "trolleybus",
+      "pos": "noun",
+      "definition_it": "Autobus alimentato elettricamente tramite linea aerea.",
+      "definition_en": "Bus powered by overhead electric line.",
+      "category": "road_users",
+      "tags": [
+        "veicoli"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "tram",
+      "term_it": "tram",
+      "term_en": "tram",
+      "pos": "noun",
+      "definition_it": "Veicolo su rotaie che circola su sede propria o promiscua.",
+      "definition_en": "Rail vehicle operating on tracks, sometimes shared with road traffic.",
+      "category": "road_users",
+      "tags": [
+        "veicoli"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "stop",
+      "term_it": "STOP",
+      "term_en": "STOP (mandatory stop)",
+      "pos": "noun",
+      "definition_it": "Segnale di precedenza che impone l'arresto e la precedenza a tutti.",
+      "definition_en": "Priority sign requiring a full stop and yielding to all.",
+      "category": "signs",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "dare-precedenza-segnale",
+      "term_it": "dare precedenza (segnale)",
+      "term_en": "yield sign",
+      "pos": "noun",
+      "definition_it": "Segnale che impone di dare precedenza ai veicoli sulla strada intersecata.",
+      "definition_en": "Sign requiring yielding to traffic on the intersecting road.",
+      "category": "signs",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "attraversamento-pedonale-segnale",
+      "term_it": "attraversamento pedonale (segnale)",
+      "term_en": "pedestrian crossing sign",
+      "pos": "noun",
+      "definition_it": "Segnale che indica o preannuncia un passaggio pedonale.",
+      "definition_en": "Sign indicating or warning of a pedestrian crossing.",
+      "category": "signs",
+      "tags": [
+        "pedoni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "divieto-di-accesso",
+      "term_it": "divieto di accesso",
+      "term_en": "no entry",
+      "pos": "noun",
+      "definition_it": "Segnale che vieta l'accesso da quella direzione.",
+      "definition_en": "Sign forbidding entry from that direction.",
+      "category": "signs",
+      "tags": [
+        "divieto"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "divieto-di-transito",
+      "term_it": "divieto di transito",
+      "term_en": "no motor vehicles",
+      "pos": "noun",
+      "definition_it": "Segnale che vieta il transito a una o più categorie di veicoli.",
+      "definition_en": "Sign prohibiting transit for one or more vehicle categories.",
+      "category": "signs",
+      "tags": [
+        "divieto"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "senso-vietato",
+      "term_it": "senso vietato",
+      "term_en": "wrong way",
+      "pos": "noun",
+      "definition_it": "Indicazione che segnala un accesso vietato in quel senso.",
+      "definition_en": "Indicates that entry is forbidden in that direction.",
+      "category": "signs",
+      "tags": [
+        "divieto"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "obbligo-di-proseguire-diritto",
+      "term_it": "obbligo di proseguire diritto",
+      "term_en": "straight ahead only",
+      "pos": "phrase",
+      "definition_it": "Segnale di obbligo: si può proseguire solo diritto.",
+      "definition_en": "Mandatory sign: you may only go straight ahead.",
+      "category": "signs",
+      "tags": [
+        "obbligo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "limite-minimo-di-velocita",
+      "term_it": "limite minimo di velocità",
+      "term_en": "minimum speed",
+      "pos": "noun",
+      "definition_it": "Segnale che impone una velocità minima, salvo condizioni di traffico.",
+      "definition_en": "Sign imposing a minimum speed, traffic permitting.",
+      "category": "signs",
+      "tags": [
+        "velocità"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "fine-limite-di-velocita",
+      "term_it": "fine limite di velocità",
+      "term_en": "end of speed limit",
+      "pos": "phrase",
+      "definition_it": "Segnale che indica che termina un limite precedente.",
+      "definition_en": "Sign indicating a previous speed limit ends.",
+      "category": "signs",
+      "tags": [
+        "velocità"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "divieto-di-sorpasso",
+      "term_it": "divieto di sorpasso",
+      "term_en": "no overtaking",
+      "pos": "phrase",
+      "definition_it": "Segnale che vieta di sorpassare (per categorie indicate).",
+      "definition_en": "Sign that forbids overtaking (for specified categories).",
+      "category": "signs",
+      "tags": [
+        "sorpasso"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "obbligo-di-catene",
+      "term_it": "obbligo di catene",
+      "term_en": "chains required",
+      "pos": "phrase",
+      "definition_it": "Obbligo di avere o montare catene (o pneumatici invernali) in certe condizioni.",
+      "definition_en": "Requirement to have or fit snow chains (or winter tyres) in certain conditions.",
+      "category": "signs",
+      "tags": [
+        "meteo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "fondo-stradale-sdrucciolevole",
+      "term_it": "fondo stradale sdrucciolevole",
+      "term_en": "slippery road",
+      "pos": "phrase",
+      "definition_it": "Segnale di pericolo: aderenza ridotta, specialmente con pioggia o ghiaccio.",
+      "definition_en": "Warning sign: reduced grip, especially with rain or ice.",
+      "category": "signs",
+      "tags": [
+        "pericolo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "lavori-in-corso",
+      "term_it": "lavori in corso",
+      "term_en": "roadworks",
+      "pos": "phrase",
+      "definition_it": "Segnale di pericolo: presenza di cantiere e possibili deviazioni.",
+      "definition_en": "Warning sign: roadworks and possible diversions.",
+      "category": "signs",
+      "tags": [
+        "cantiere"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "strettoia",
+      "term_it": "strettoia",
+      "term_en": "narrowing",
+      "pos": "noun",
+      "definition_it": "Segnale di pericolo: carreggiata più stretta (a destra, a sinistra o su entrambi).",
+      "definition_en": "Warning sign: carriageway narrows (right, left, or both).",
+      "category": "signs",
+      "tags": [
+        "pericolo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "idoneita-alla-guida",
+      "term_it": "idoneità alla guida",
+      "term_en": "fitness to drive",
+      "pos": "noun",
+      "definition_it": "Condizione fisica e mentale necessaria per guidare in sicurezza.",
+      "definition_en": "Physical and mental condition needed to drive safely.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "stanchezza",
+      "term_it": "stanchezza",
+      "term_en": "fatigue",
+      "pos": "noun",
+      "definition_it": "Riduce attenzione e tempi di reazione; è pericolosa alla guida.",
+      "definition_en": "Reduces attention and reaction time; dangerous when driving.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "sonnolenza",
+      "term_it": "sonnolenza",
+      "term_en": "drowsiness",
+      "pos": "noun",
+      "definition_it": "Tendenza ad addormentarsi; aumenta rischio di incidente.",
+      "definition_en": "Tendency to fall asleep; increases crash risk.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "alcool",
+      "term_it": "alcool",
+      "term_en": "alcohol",
+      "pos": "noun",
+      "definition_it": "Sostanza che altera riflessi e giudizio; può rendere non idonei alla guida.",
+      "definition_en": "Substance that impairs reflexes and judgment; can make driving unsafe.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "stato-di-ebbrezza",
+      "term_it": "stato di ebbrezza",
+      "term_en": "drunk driving",
+      "pos": "noun",
+      "definition_it": "Condizione di alterazione dovuta ad alcool, con sanzioni severe.",
+      "definition_en": "Alcohol-impaired condition with severe penalties.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "tasso-alcolemico",
+      "term_it": "tasso alcolemico",
+      "term_en": "blood alcohol level",
+      "pos": "noun",
+      "definition_it": "Quantità di alcool nel sangue (BAC).",
+      "definition_en": "Amount of alcohol in the blood (BAC).",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": [
+        "BAC"
+      ]
+    },
+    {
+      "id": "droghe",
+      "term_it": "droghe",
+      "term_en": "drugs",
+      "pos": "noun",
+      "definition_it": "Sostanze che alterano percezione e riflessi; vietate alla guida.",
+      "definition_en": "Substances that impair perception and reflexes; forbidden when driving.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "farmaci-sedativi",
+      "term_it": "farmaci sedativi",
+      "term_en": "sedative medicines",
+      "pos": "noun",
+      "definition_it": "Farmaci che possono ridurre attenzione e riflessi; cautela alla guida.",
+      "definition_en": "Medicines that can reduce attention and reflexes; caution when driving.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "euforia",
+      "term_it": "euforia",
+      "term_en": "euphoria",
+      "pos": "noun",
+      "definition_it": "Stato che può portare a sottovalutare il pericolo.",
+      "definition_en": "State that can lead to underestimating danger.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "concentrazione",
+      "term_it": "concentrazione",
+      "term_en": "concentration",
+      "pos": "noun",
+      "definition_it": "Capacità di mantenere attenzione sulla guida e sull'ambiente.",
+      "definition_en": "Ability to keep attention on driving and surroundings.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "attenzione",
+      "term_it": "attenzione",
+      "term_en": "attention",
+      "pos": "noun",
+      "definition_it": "Focalizzazione sulle informazioni utili alla guida.",
+      "definition_en": "Focus on driving-relevant information.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "cambiare-corsia",
+      "term_it": "cambiare corsia",
+      "term_en": "to change lanes",
+      "pos": "phrase",
+      "definition_it": "Spostarsi da una corsia a un'altra segnalando e controllando gli specchi.",
+      "definition_en": "Move from one lane to another while signalling and checking mirrors.",
+      "category": "maneuvers",
+      "tags": [
+        "corsie"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "distanza-laterale",
+      "term_it": "distanza laterale",
+      "term_en": "lateral clearance",
+      "pos": "noun",
+      "definition_it": "Spazio di sicurezza mantenuto di lato (es. durante sorpasso di moto/bici).",
+      "definition_en": "Safe side distance (e.g., when overtaking motorcycles/bicycles).",
+      "category": "maneuvers",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "sterzare",
+      "term_it": "sterzare",
+      "term_en": "to steer",
+      "pos": "verb",
+      "definition_it": "Girare il volante/manubrio per cambiare direzione.",
+      "definition_en": "Turn the steering wheel/handlebar to change direction.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "scalare-marcia",
+      "term_it": "scalare marcia",
+      "term_en": "to downshift",
+      "pos": "phrase",
+      "definition_it": "Inserire una marcia più bassa per aumentare freno motore o controllo.",
+      "definition_en": "Select a lower gear to increase engine braking or control.",
+      "category": "maneuvers",
+      "tags": [
+        "verbi",
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "freno-motore",
+      "term_it": "freno motore",
+      "term_en": "engine braking",
+      "pos": "noun",
+      "definition_it": "Rallentamento ottenuto riducendo marcia e lasciando chiuso l'acceleratore.",
+      "definition_en": "Deceleration obtained by downshifting and lifting off the throttle.",
+      "category": "maneuvers",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "trainare",
+      "term_it": "trainare",
+      "term_en": "to tow",
+      "pos": "verb",
+      "definition_it": "Trascinare un veicolo guasto con un altro veicolo, con regole specifiche.",
+      "definition_en": "To pull a broken-down vehicle with another, under specific rules.",
+      "category": "maneuvers",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "manovra",
+      "term_it": "manovra",
+      "term_en": "maneuver",
+      "pos": "noun",
+      "definition_it": "Azione di guida come svolta, parcheggio, sorpasso, inversione.",
+      "definition_en": "Driving action such as turning, parking, overtaking, U-turn.",
+      "category": "maneuvers",
+      "tags": [
+        "generale"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnalare-una-manovra",
+      "term_it": "segnalare una manovra",
+      "term_en": "to signal a maneuver",
+      "pos": "phrase",
+      "definition_it": "Usare indicatori di direzione e comportamenti chiari prima di muoversi.",
+      "definition_en": "Use turn signals and clear behavior before moving.",
+      "category": "maneuvers",
+      "tags": [
+        "segnalazioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "abs",
+      "term_it": "ABS",
+      "term_en": "ABS",
+      "pos": "noun",
+      "definition_it": "Sistema antibloccaggio che aiuta a mantenere la direzionalità in frenata.",
+      "definition_en": "Anti-lock braking system that helps maintain steering control while braking.",
+      "category": "vehicle_safety",
+      "tags": [
+        "freni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": [
+        "Anti-lock braking system"
+      ]
+    },
+    {
+      "id": "esp",
+      "term_it": "ESP",
+      "term_en": "ESC",
+      "pos": "noun",
+      "definition_it": "Sistema di controllo stabilità che aiuta a prevenire sbandamenti.",
+      "definition_en": "Electronic stability control that helps prevent skids.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": [
+        "Electronic Stability Control",
+        "ESC"
+      ]
+    },
+    {
+      "id": "airbag-laterali",
+      "term_it": "airbag laterali",
+      "term_en": "side airbags",
+      "pos": "noun",
+      "definition_it": "Airbag che proteggono in urti laterali.",
+      "definition_en": "Airbags that protect in side impacts.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "pastiglie-dei-freni",
+      "term_it": "pastiglie dei freni",
+      "term_en": "brake pads",
+      "pos": "noun",
+      "definition_it": "Elementi di attrito che premono sul disco per frenare.",
+      "definition_en": "Friction elements that press on the disc to brake.",
+      "category": "vehicle_safety",
+      "tags": [
+        "freni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "dischi-dei-freni",
+      "term_it": "dischi dei freni",
+      "term_en": "brake discs",
+      "pos": "noun",
+      "definition_it": "Parti metalliche su cui agiscono le pastiglie per frenare.",
+      "definition_en": "Metal parts on which pads act to brake.",
+      "category": "vehicle_safety",
+      "tags": [
+        "freni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "liquido-dei-freni",
+      "term_it": "liquido dei freni",
+      "term_en": "brake fluid",
+      "pos": "noun",
+      "definition_it": "Fluido idraulico del circuito frenante; va controllato periodicamente.",
+      "definition_en": "Hydraulic fluid in the braking circuit; should be checked periodically.",
+      "category": "vehicle_safety",
+      "tags": [
+        "freni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "battistrada",
+      "term_it": "battistrada",
+      "term_en": "tread",
+      "pos": "noun",
+      "definition_it": "Parte del pneumatico a contatto con la strada; l'usura riduce aderenza.",
+      "definition_en": "Tyre part in contact with the road; wear reduces grip.",
+      "category": "vehicle_safety",
+      "tags": [
+        "pneumatici"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "cintura-a-tre-punti",
+      "term_it": "cintura a tre punti",
+      "term_en": "three-point belt",
+      "pos": "noun",
+      "definition_it": "Cintura che trattiene torace e bacino.",
+      "definition_en": "Seat belt restraining chest and pelvis.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "carta-di-circolazione",
+      "term_it": "carta di circolazione",
+      "term_en": "vehicle registration document",
+      "pos": "noun",
+      "definition_it": "Documento del veicolo con dati tecnici e di immatricolazione.",
+      "definition_en": "Vehicle document with technical and registration data.",
+      "category": "rules_documents",
+      "tags": [
+        "documenti"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "assicurazione",
+      "term_it": "assicurazione",
+      "term_en": "insurance",
+      "pos": "noun",
+      "definition_it": "Copertura economica per danni; per i veicoli è obbligatoria la RCA.",
+      "definition_en": "Financial cover for damage; RCA is mandatory for vehicles.",
+      "category": "rules_documents",
+      "tags": [
+        "assicurazione"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "responsabilita-civile",
+      "term_it": "responsabilità civile",
+      "term_en": "civil liability",
+      "pos": "noun",
+      "definition_it": "Obbligo di risarcire i danni causati a terzi.",
+      "definition_en": "Obligation to compensate damage caused to others.",
+      "category": "rules_documents",
+      "tags": [
+        "responsabilità"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "responsabilita-penale",
+      "term_it": "responsabilità penale",
+      "term_en": "criminal liability",
+      "pos": "noun",
+      "definition_it": "Conseguenze penali per comportamenti previsti dalla legge come reato.",
+      "definition_en": "Criminal consequences for behavior classified as a crime.",
+      "category": "rules_documents",
+      "tags": [
+        "responsabilità"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "responsabilita-amministrativa",
+      "term_it": "responsabilità amministrativa",
+      "term_en": "administrative liability",
+      "pos": "noun",
+      "definition_it": "Sanzioni amministrative (multa, sospensione, punti) per violazioni.",
+      "definition_en": "Administrative penalties (fine, suspension, points) for offences.",
+      "category": "rules_documents",
+      "tags": [
+        "responsabilità"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "punti-patente",
+      "term_it": "punti patente",
+      "term_en": "licence points",
+      "pos": "noun",
+      "definition_it": "Sistema a punti: alcune infrazioni comportano decurtazione.",
+      "definition_en": "Points system: some offences cause point deductions.",
+      "category": "rules_documents",
+      "tags": [
+        "sanzioni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "revisione-periodica",
+      "term_it": "revisione periodica",
+      "term_en": "periodic inspection",
+      "pos": "noun",
+      "definition_it": "Controllo obbligatorio a scadenze stabilite.",
+      "definition_en": "Mandatory inspection at set intervals.",
+      "category": "rules_documents",
+      "tags": [
+        "obblighi"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "manutenzione",
+      "term_it": "manutenzione",
+      "term_en": "maintenance",
+      "pos": "noun",
+      "definition_it": "Interventi periodici per mantenere il veicolo efficiente e sicuro.",
+      "definition_en": "Regular actions to keep the vehicle efficient and safe.",
+      "category": "eco_driving",
+      "tags": [
+        "veicolo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "filtro-dellolio",
+      "term_it": "filtro dell'olio",
+      "term_en": "oil filter",
+      "pos": "noun",
+      "definition_it": "Filtro che trattiene impurità dell'olio motore; si sostituisce ai tagliandi.",
+      "definition_en": "Filter that traps engine oil impurities; replaced during servicing.",
+      "category": "eco_driving",
+      "tags": [
+        "veicolo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "tagliando",
+      "term_it": "tagliando",
+      "term_en": "service",
+      "pos": "noun",
+      "definition_it": "Manutenzione programmata (olio, filtri, controlli).",
+      "definition_en": "Scheduled maintenance (oil, filters, checks).",
+      "category": "eco_driving",
+      "tags": [
+        "veicolo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "visibilita",
+      "term_it": "visibilità",
+      "term_en": "visibility",
+      "pos": "noun",
+      "definition_it": "Quanto è possibile vedere la strada e i pericoli; dipende da luce, meteo, ostacoli.",
+      "definition_en": "How well you can see the road and hazards; depends on light, weather, obstacles.",
+      "category": "driver_fitness",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "angolo-cieco",
+      "term_it": "angolo cieco",
+      "term_en": "blind spot",
+      "pos": "noun",
+      "definition_it": "Zona non visibile negli specchi; serve controllare prima di cambiare corsia.",
+      "definition_en": "Area not visible in mirrors; check before changing lanes.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "giubbotto-rifrangente",
+      "term_it": "giubbotto rifrangente",
+      "term_en": "reflective vest",
+      "pos": "noun",
+      "definition_it": "Indumento ad alta visibilità, utile/obbligatorio in alcune situazioni di emergenza.",
+      "definition_en": "High-visibility vest, useful/mandatory in some emergency situations.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "corsia-di-accelerazione",
+      "term_it": "corsia di accelerazione",
+      "term_en": "acceleration lane",
+      "pos": "noun",
+      "definition_it": "Corsia per immettersi aumentando velocità in sicurezza (es. in autostrada).",
+      "definition_en": "Lane used to merge safely by accelerating (e.g., on motorways).",
+      "category": "road_definitions",
+      "tags": [
+        "autostrada"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "corsia-di-decelerazione",
+      "term_it": "corsia di decelerazione",
+      "term_en": "deceleration lane",
+      "pos": "noun",
+      "definition_it": "Corsia per uscire riducendo velocità senza intralciare la corsia di marcia.",
+      "definition_en": "Lane for exiting while slowing down without obstructing through traffic.",
+      "category": "road_definitions",
+      "tags": [
+        "autostrada"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "corsia-centrale",
+      "term_it": "corsia centrale",
+      "term_en": "center lane",
+      "pos": "noun",
+      "definition_it": "Corsia in mezzo; in alcune strade a tre corsie può essere usata solo per manovre.",
+      "definition_en": "Middle lane; on some three-lane two-way roads it may be used only for maneuvers.",
+      "category": "road_definitions",
+      "tags": [
+        "corsie"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/554.gif",
+          "repo_path": "public/images/554.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "strada-a-doppio-senso",
+      "term_it": "strada a doppio senso",
+      "term_en": "two-way road",
+      "pos": "noun",
+      "definition_it": "Strada con circolazione nei due sensi opposti.",
+      "definition_en": "Road with traffic in both directions.",
+      "category": "road_definitions",
+      "tags": [],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "senso-unico",
+      "term_it": "senso unico",
+      "term_en": "one-way street",
+      "pos": "noun",
+      "definition_it": "Strada dove si può circolare in un solo senso di marcia.",
+      "definition_en": "Street where traffic is allowed only in one direction.",
+      "category": "road_definitions",
+      "tags": [],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "carico",
+      "term_it": "carico",
+      "term_en": "load",
+      "pos": "noun",
+      "definition_it": "Peso trasportato dal veicolo; va distribuito correttamente per stabilità e frenata.",
+      "definition_en": "Weight carried by the vehicle; must be properly distributed for stability and braking.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "massa-complessiva",
+      "term_it": "massa complessiva",
+      "term_en": "gross vehicle weight",
+      "pos": "noun",
+      "definition_it": "Peso totale del veicolo a pieno carico (veicolo + persone + cose).",
+      "definition_en": "Total weight at full load (vehicle + people + goods).",
+      "category": "vehicle_safety",
+      "tags": [
+        "veicolo"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "ingombro",
+      "term_it": "ingombro",
+      "term_en": "obstruction / road occupancy",
+      "pos": "noun",
+      "definition_it": "Occupazione della carreggiata che può creare pericolo o rallentamento.",
+      "definition_en": "Occupation of the roadway that can create danger or slow traffic.",
+      "category": "road_definitions",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "segnalazione-di-emergenza-4-frecce",
+      "term_it": "segnalazione di emergenza (4 frecce)",
+      "term_en": "hazard lights",
+      "pos": "noun",
+      "definition_it": "Luci lampeggianti simultanee usate per segnalare pericolo o veicolo fermo.",
+      "definition_en": "Simultaneous flashing lights used to warn of danger or a stopped vehicle.",
+      "category": "vehicle_safety",
+      "tags": [
+        "luci",
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "tamponamento",
+      "term_it": "tamponamento",
+      "term_en": "rear-end collision",
+      "pos": "noun",
+      "definition_it": "Urto contro il veicolo che precede, spesso dovuto a distanza insufficiente.",
+      "definition_en": "Collision into the vehicle ahead, often due to insufficient distance.",
+      "category": "accidents_firstaid",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "fermata-autobus-zona",
+      "term_it": "fermata autobus (zona)",
+      "term_en": "bus stop area",
+      "pos": "noun",
+      "definition_it": "Spazio riservato alla fermata dei bus; è vietato sostare/fermare se intralcia.",
+      "definition_en": "Area reserved for bus stopping; parking/stopping is forbidden if it obstructs.",
+      "category": "road_definitions",
+      "tags": [
+        "trasporto-pubblico"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "corsia-riservata",
+      "term_it": "corsia riservata",
+      "term_en": "reserved lane",
+      "pos": "noun",
+      "definition_it": "Corsia destinata a specifiche categorie (bus, taxi, bici).",
+      "definition_en": "Lane reserved for specific categories (bus, taxi, bikes).",
+      "category": "road_definitions",
+      "tags": [
+        "corsie"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "prova-di-frenata",
+      "term_it": "prova di frenata",
+      "term_en": "brake test",
+      "pos": "noun",
+      "definition_it": "Breve prova dopo lavaggio o manutenzione per verificare l'efficacia dei freni.",
+      "definition_en": "Short test after washing or servicing to check brake effectiveness.",
+      "category": "vehicle_safety",
+      "tags": [
+        "freni"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "guasto",
+      "term_it": "guasto",
+      "term_en": "breakdown/fault",
+      "pos": "noun",
+      "definition_it": "Avaria del veicolo che può richiedere sosta di emergenza o traino.",
+      "definition_en": "Vehicle failure that may require an emergency stop or towing.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "avaria",
+      "term_it": "avaria",
+      "term_en": "breakdown",
+      "pos": "noun",
+      "definition_it": "Guasto che rende difficile o impossibile continuare la marcia.",
+      "definition_en": "Fault that makes it difficult or impossible to continue driving.",
+      "category": "vehicle_safety",
+      "tags": [
+        "sicurezza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "incrocio-schema",
+      "term_it": "incrocio (schema)",
+      "term_en": "junction diagram",
+      "pos": "noun",
+      "definition_it": "Rappresentazione grafica di un incrocio per valutare precedenze.",
+      "definition_en": "Diagram representation of an intersection to evaluate priority.",
+      "category": "right_of_way",
+      "tags": [
+        "precedenza"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [
+        {
+          "path": "/images/654.gif",
+          "repo_path": "public/images/654.gif"
+        }
+      ],
+      "aliases_it": [],
+      "aliases_en": []
+    },
+    {
+      "id": "semaforo-simbolo",
+      "term_it": "semaforo (simbolo)",
+      "term_en": "traffic light symbol",
+      "pos": "noun",
+      "definition_it": "Icone o luci che indicano stati/obblighi di marcia.",
+      "definition_en": "Icons or lights indicating driving states/requirements.",
+      "category": "signals",
+      "tags": [
+        "semafori"
+      ],
+      "difficulty": "core",
+      "example_it": "",
+      "example_en": "",
+      "images": [],
+      "aliases_it": [],
+      "aliases_en": []
+    }
+  ]
+}
