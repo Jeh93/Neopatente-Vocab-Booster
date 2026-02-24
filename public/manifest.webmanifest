@@ -1,0 +1,11 @@
+{
+  "name": "Patente AB Booster",
+  "short_name": "PatenteBooster",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f7f7",
+  "theme_color": "#f57c00",
+  "icons": [
+    { "src": "/vite.svg", "sizes": "192x192", "type": "image/svg+xml" }
+  ]
+}

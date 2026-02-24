@@ -1,65 +1,43 @@
-# AB Driving License Quiz
-- It is possible to run this by just using Netlify.
-[![Netlify Status](https://api.netlify.com/api/v1/badges/34ee311d-07e0-4c82-8032-e1a53e1ae203/deploy-status)](https://app.netlify.com/sites/quiz-patente/deploys)
+# Patente AB Quiz + Vocabulary Booster
 
-## What is this?
-- A single page practice tool built for the Italian AB driving theory exam.
-- Works entirely offline once built: questions, hints, and traffic sign images are bundled with the app.
-- Topic selector shows each chapter in Italian followed by the English translation, including a full mock test mode.
+Mobile-first React + Vite app for Italian driving-license study with quiz practice, vocabulary drills, adaptive review, and offline usage.
 
-## English Translations
-- To see English translations of questions and hints, it is suggested that you install the **Immersive Translate** browser extension. It allows one to easily turn on/off the translations and pick different translation enginges (e.g., Google Translate, Microsoft Translator).
+## Run locally
+```bash
+npm install
+npm run dev
+npm run build
+npm run preview
+```
 
-## Quick start (new users)
-1. **Install Node.js** – Version 18 or newer is recommended. The easiest path is to download it from [nodejs.org](https://nodejs.org/).
-2. **Clone the project**
-   ```bash
-   git clone https://github.com/<your-account>/quiz-patente-ab.git
-   cd quiz-patente-ab
-   ```
-3. **Install dependencies**
-   ```bash
-   npm install
-   ```
-   Yarn also works (`yarn install`), but the repo ships with an `npm` lockfile.
-4. **Run the app locally**
-   ```bash
-   npm run dev
-   ```
-   Then open the printed URL (by default `http://localhost:5173`) in your browser.
+## Data sources
+- Quiz questions: `src/services/questions.json`
+- Chapters/topics: `src/services/chapters.json`
+- Hints/explanations: `src/services/hints.json`
+- Vocabulary dataset: `patente_vocab_it_en.json`
 
-### Everyday commands
-- `npm run dev` – start the Vite dev server with hot reload.
-- `npm run build` – create the production bundle inside `dist/`.
-- `npm run preview` – serve the production build locally.
-- `npm run mock:test` – smoke-check the mock test configuration.
+`patente_vocab_it_en.json` uses:
+- root fields: `schema_version`, `generated_at_utc`, `repo`, `image_naming`, `cards`
+- each card: `id`, `term_it`, `term_en`, `pos`, `definition_it`, `definition_en`, `category`, `tags`, `difficulty`, `example_it`, `example_en`, `images`, `aliases_it`, `aliases_en`
 
-## Using the quiz
-- **Practice mode:** choose any chapter from the dropdown to drill random questions from that area.
-- **Mock test:** pick the “Prova d'esame simulata — Mock test” option for a 30-question exam (one per chapter plus five weighted towards tricky topics). Scores and restart controls appear once the run finishes.
-- **Hints:** the lightbulb button opens a modal with theory explanations when available.
-- **Images:** traffic-sign questions display a picture when the dataset specifies one.
+## Adaptive scheduler (brief)
+- Mastery score range is `[0..1]`, initialized at `0.2`.
+- Correct answer update: `mastery += 0.08 * (1 - mastery)`.
+- Wrong answer update: `mastery -= 0.18 * mastery`.
+- Daily queue composition: 70% review (lowest mastery + low recency), 30% new/low-attempt.
+- Error pattern boost:
+  - high wrong-rate topics are boosted in quiz scheduling;
+  - vocab linked from mistaken question text + hint text (keyword match with `term_it`/`aliases_it`) receives extra weight.
 
-## Feature highlights
-- Chakra UI for responsive, accessible layout with light/dark mode.
-- Randomized question selection with on-screen counters for total attempts and mistakes.
-- Local datasets (`questions.json`, `chapters.json`, `hints.json`, `public/images`) so the app never depends on live APIs during use.
-- Optional Node scripts under `private/` to refresh datasets from the upstream source (not required for daily development).
+## Export / Import progress
+- Go to **Settings → Data**.
+- **Export progress JSON** downloads one progress blob.
+- **Import progress JSON** merges IDs safely (`questionStats`, `vocabStats`, settings) without deleting all existing history.
+- **Reset progress** restores default local state.
 
-## Under the hood
-- **Tech stack:** Vite + React 18 (StrictMode), Chakra UI, and a pure-function data layer.
-- **Key files:**
-  - `src/App.jsx` – orchestrates modes, question state, scoring, and mock exams.
-  - `src/components/ArgomentoPicker.jsx` – bilingual topic dropdown with mock test entry.
-  - `src/components/Domanda/Domanda.jsx` – renders the question, answer buttons, and feedback.
-  - `src/services/*` – utilities for loading and normalizing questions, looking up chapters, and composing mock tests.
-- **State flow:** questions are picked via `pickDomanda` (practice) or `buildMockTest` (exam). Answers update the total counter and track incorrect IDs to avoid duplicate penalties.
+## PWA / Offline
+- App registers `public/sw.js` and includes `public/manifest.webmanifest`.
+- After first load, cached routes and data assets are available offline.
 
-## Deploy notes
-- Netlify automatically builds and deploys from `main` (see badge above). You can also push the `dist/` folder to any static host.
-- If you refresh datasets or assets, rebuild the production bundle (`npm run build`) before deploying so the changes ship together.
-
-## Roadmap ideas
-- Persist answer history (e.g., `localStorage`) to track progress over time.
-- Add chapter-level stats, timed exam mode, and printable results.
-- Expand localization and accessibility (screen-reader optimisations, keyboard shortcuts).
+## Optional Android packaging
+Use a wrapper such as Capacitor or Trusted Web Activity around the built PWA if needed.
